@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pali Script Converter</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Pali Script Converter</h1>
+
+    <div class="card">
+
+        <label>Input Text</label>
+        <textarea id="inputText"
+                  placeholder="Enter text here..."></textarea>
+
+        <div class="selectors">
+
+            <div>
+                <label>From Script</label>
+                <select id="fromScript">
+                    {% for s in scripts %}
+                    <option value="{{ s.key }}">
+                        {{ s.name }} ({{ s.native }})
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label>To Script</label>
+                <select id="toScript">
+                    {% for s in scripts %}
+                    <option value="{{ s.key }}">
+                        {{ s.name }} ({{ s.native }})
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+        </div>
+
+        <button id="convertBtn">Convert</button>
+
+        <label>Output</label>
+        <textarea id="outputText" readonly></textarea>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
