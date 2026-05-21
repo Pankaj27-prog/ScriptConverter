@@ -214,16 +214,42 @@ IV_TO_DV = {
 }
 
 
-def remove_a(text, _script=None):
-    text = re.sub(r'([ක-ෆ])([^අආඉඊඋඌඑඔ\u0DCA])', r'\1\u0DCA\2', text)
-    text = re.sub(r'([ක-ෆ])$', r'\1\u0DCA', text)
+# def remove_a(text, _script=None):
+#     text = re.sub(r'([ක-ෆ])([^අආඉඊඋඌඑඔ\u0DCA])', r'\1\u0DCA\2', text)
+#     text = re.sub(r'([ක-ෆ])$', r'\1\u0DCA', text)
 
+#     def repl(m):
+#         return m.group(1) + IV_TO_DV[m.group(2)]
+
+#     text = re.sub(r'([ක-ෆ])([අආඉඊඋඌඑඔ])', repl, text)
+#     return text
+def remove_a(text, _script=None):
+
+    # Add hal kirima (්) after consonants
+    text = re.sub(
+        r'([ක-ෆ])([^අආඉඊඋඌඑඔ්])',
+        r'\1' + '්' + r'\2',
+        text
+    )
+
+    # Add hal kirima at end
+    text = re.sub(
+        r'([ක-ෆ])$',
+        r'\1' + '්',
+        text
+    )
+
+    # Replace independent vowels with dependent vowels
     def repl(m):
         return m.group(1) + IV_TO_DV[m.group(2)]
 
-    text = re.sub(r'([ක-ෆ])([අආඉඊඋඌඑඔ])', repl, text)
-    return text
+    text = re.sub(
+        r'([ක-ෆ])([අආඉඊඋඌඑඔ])',
+        repl,
+        text
+    )
 
+    return text
 
 def fix_m_above(text, script=None):
     return text.replace('ṁ', 'ං')
