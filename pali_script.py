@@ -315,9 +315,16 @@ class TextProcessor:
 
     @staticmethod
     def basic_convert_to_sinh(input_text, script):
+
         text = input_text
+        
+        # Fix Roman uppercase input
+        if script == Script.RO:
+            text = text.lower()
+
         for func in convert_from_func.get(script, [convert_from]):
             text = func(text, script)
+
         return text
 
     @staticmethod
