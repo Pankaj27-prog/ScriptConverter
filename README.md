@@ -30,7 +30,7 @@ This application converts text between **Devanagari** and **Brahmi** scripts in 
 script-converter/
 │
 ├── app.py
-├── script_converter.py
+├── devanagari_brahmi.py
 ├── requirements.txt
 │
 ├── templates/
