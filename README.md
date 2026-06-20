@@ -1,47 +1,36 @@
-# Pali Script Converter
+# Devanagari ↔ Brahmi Converter
 
-A web-based Pali script transliteration/conversion tool built using Flask, Python, HTML, CSS, and JavaScript.
+A web-based script conversion tool built using Flask, Python, HTML, CSS, and JavaScript.
 
-Supports conversion between multiple Indic and Asian scripts.
-
----
-
-# Supported Scripts
-
-- Sinhala
-- Devanagari
-- Roman
-- Thai
-- Lao
-- Myanmar
-- Khmer
-- Bengali
-- Gurmukhi
-- Telugu
-- Kannada
-- Malayalam
-- Tibetan
-- Cyrillic
+This application converts text between **Devanagari** and **Brahmi** scripts in both directions.
 
 ---
 
-# Features
+## Features
 
-- Real-time script conversion
-- Clean web interface
-- Multiple script support
-- Flask backend
-- Easy to extend
+* Devanagari → Brahmi conversion
+* Brahmi → Devanagari conversion
+* Real-time text conversion
+* Simple and user-friendly interface
+* Flask-powered backend
+* Lightweight and easy to extend
 
 ---
 
-# Project Structure
+## Supported Conversions
+
+* Devanagari → Brahmi
+* Brahmi → Devanagari
+
+---
+
+## Project Structure
 
 ```text
-pali-script-converter/
+script-converter/
 │
 ├── app.py
-├── pali_script.py
+├── script_converter.py
 ├── requirements.txt
 │
 ├── templates/
@@ -59,21 +48,21 @@ pali-script-converter/
 
 ---
 
-# Installation
+## Installation
 
-Clone repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/Pankaj27-prog/ScriptConverter.git
 ```
 
-Move into project folder:
+Navigate to the project directory:
 
 ```bash
 cd ScriptConverter
 ```
 
-Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -81,15 +70,15 @@ pip install -r requirements.txt
 
 ---
 
-# Run Project
+## Run the Application
 
-Start Flask server:
+Start the Flask development server:
 
 ```bash
 python app.py
 ```
 
-Open browser:
+Open your browser and visit:
 
 ```text
 http://127.0.0.1:5000
@@ -97,32 +86,44 @@ http://127.0.0.1:5000
 
 ---
 
-# Example
+## Example
 
-## Input
+### Devanagari Input
 
 ```text
-කරුණා
+धम्म
 ```
 
-## Sinhala → Roman Output
+### Brahmi Output
 
 ```text
-karuṇā
+𑀥𑀫𑁆𑀫
+```
+
+### Brahmi Input
+
+```text
+𑀥𑀫𑁆𑀫
+```
+
+### Devanagari Output
+
+```text
+धम्म
 ```
 
 ---
 
-# Technologies Used
+## Technologies Used
 
-- Python
-- Flask
-- HTML
-- CSS
-- JavaScript
+* Python
+* Flask
+* HTML
+* CSS
+* JavaScript
 
 ---
 
-# Author
+## Author
 
-Pankaj Sarwa
+**Pankaj Sarwa**
